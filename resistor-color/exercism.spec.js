@@ -1,0 +1,34 @@
+const { colorCode, COLORS } = require('./exercism');
+
+describe('Resistor Color', () => {
+  describe('Color codes', () => {
+    test('Black', () => {
+      expect(colorCode('black')).toEqual(0);
+    });
+
+    test('White', () => {
+      expect(colorCode('white')).toEqual(9);
+    });
+
+    test('Orange', () => {
+      expect(colorCode('orange')).toEqual(3);
+    });
+  });
+
+  test('Colors', () => {
+    const result = [
+      'black',
+      'brown',
+      'red',
+      'orange',
+      'yellow',
+      'green',
+      'blue',
+      'violet',
+      'grey',
+      'white'
+    ];
+    expect(COLORS).toEqual(result);
+  });
+});
+

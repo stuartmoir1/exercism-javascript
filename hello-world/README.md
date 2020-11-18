@@ -4,5 +4,5 @@ npm install jest --global
 ```
 To run tests:
 ```bash
-jest spec --notify --config=config.json
+jest exercism.spec --notify --config=config.json
 ```
