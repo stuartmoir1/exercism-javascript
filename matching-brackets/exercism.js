@@ -1,16 +1,16 @@
 const isNested = (brackets) => {
-  const arr = [];
+  const opening = []; // opening brackets
   const re = /[\(\{\[]/;
   let count = 0;
 
-  for (let brkt of brackets) {
+  for (let bracket of brackets) {
     count++;
-    if (re.test(brkt)) {
-      arr.push(brkt);
+    if (re.test(bracket)) {
+      opening.push(bracket);
     } else {
-      const last = arr[arr.length -1];
-      switch(brkt) {
-        // returns false where brackets not nested
+      // check last opening bracket type
+      const last = opening[opening.length -1];
+      switch(bracket) {
         case ')':
           if (last !== '(') return false;
           break;
@@ -21,10 +21,10 @@ const isNested = (brackets) => {
           if (last !== '[') return false;
           break;
       }
-      arr.pop();
+      opening.pop();
     }
-    // more opening brackets than closing
-    if (arr.length && brackets.length === count) return false;
+    // check not more opening brackets than closing
+    if (opening.length && brackets.length === count) return false;
   }
 
   return true;
