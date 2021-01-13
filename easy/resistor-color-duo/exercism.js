@@ -12,7 +12,7 @@ const COLORS = [
 ];
 
 const decodedValue = (value) => {
-  return +(COLORS.indexOf(value[0]).toString() + COLORS.indexOf(value[1]));
+  return (COLORS.indexOf(value[0]) * 10) + COLORS.indexOf(value[1]);
 };
 
 module.exports = {
