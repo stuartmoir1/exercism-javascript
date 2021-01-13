@@ -12,14 +12,10 @@ const COLORS = [
 ];
 
 const decodedValue = (value) => {
-  return Number(value
-    .map(e => COLORS.indexOf(e).toString())
-    .slice(0, 2)
-    .join('')
-  );
+  return +(COLORS.indexOf(value[0]).toString() + COLORS.indexOf(value[1]));
 };
 
 module.exports = {
   decodedValue
-}
+};
 
