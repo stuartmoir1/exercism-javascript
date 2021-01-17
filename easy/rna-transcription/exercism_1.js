@@ -5,8 +5,8 @@ const TRANSCRIPTION = {
   A: 'U',
 };
 
-const toRna = (sequence) => {
-  return sequence
+const toRna = (dna) => {
+  return dna
     .split('')
     .map(e => TRANSCRIPTION[e])
     .join('');

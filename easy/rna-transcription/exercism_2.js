@@ -5,8 +5,8 @@ const transcription = new Map([
   ['A', 'U'],
 ]);
 
-const toRna = (sequence) => {
-  return sequence
+const toRna = (dna) => {
+  return dna
     .split('')
     .map(e => transcription.get(e))
     .join('');
