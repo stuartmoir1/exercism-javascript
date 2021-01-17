@@ -9,11 +9,11 @@ const PLANET_YEAR_FACTORS = {
   neptune: 164.79132,
 }
 
-const SECONDS_IN_EARTH_YEAR = 31557600;
+const EARTH_YEAR_SECONDS = 31557600;
 
 const age = (planet, seconds) => {
   const factor = PLANET_YEAR_FACTORS[planet];
-  return +(seconds / SECONDS_IN_EARTH_YEAR / factor).toFixed(2);
+  return +(seconds / (EARTH_YEAR_SECONDS * factor)).toFixed(2);
 };
 
 module.exports = {
