@@ -1,4 +1,4 @@
-const { gigasecond } = require('./exercism');
+const { gigasecond } = require('../exercism');
 
 describe('Gigasecond', () => {  
   // date only specification of time

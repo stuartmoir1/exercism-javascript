@@ -1,4 +1,4 @@
-const { decodedValue } = require('./exercism_1');
+const { decodedValue } = require('../exercism_2');
 
 describe('Resistor Colors', () => {
   test('Brown and black', () => {
