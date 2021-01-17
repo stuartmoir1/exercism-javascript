@@ -1,6 +1,26 @@
-const { toRna } = require('./exercism_2');
+const { toRna } = require('../exercism_3');
 
 describe('Transcription', () => {
+
+  describe('error checking', () => {
+
+    test('input is not string - number', () => {
+      expect(() => toRna(1)).toThrow(new Error('Input is not a string'));
+    });
+
+    test('input is not string - array', () => {
+      expect(() => toRna([])).toThrow(new Error('Input is not a string'));
+    });
+
+    test('input is not string - object', () => {
+      expect(() => toRna({})).toThrow(new Error('Input is not a string'));
+    });
+
+    test('input is not string - map', () => {
+      expect(() => toRna(new Map())).toThrow(new Error('Input is not a string'));
+    });
+  })
+
   test('empty rna sequence', () => {
     expect(toRna('')).toEqual('');
   });

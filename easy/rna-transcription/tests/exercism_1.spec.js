@@ -1,4 +1,4 @@
-const { toRna } = require('./exercism_1');
+const { toRna } = require('../exercism_1');
 
 describe('Transcription', () => {
   test('empty rna sequence', () => {
