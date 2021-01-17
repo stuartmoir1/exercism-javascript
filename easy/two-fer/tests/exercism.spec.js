@@ -1,4 +1,4 @@
-const { twoFer } = require('./exercism');
+const { twoFer } = require('../exercism');
 
 describe('Two Fer', () => {
   test('No name given', () => {

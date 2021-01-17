@@ -3,7 +3,6 @@ const { toRna } = require('../exercism_3');
 describe('Transcription', () => {
 
   describe('error checking', () => {
-
     test('input is not string - number', () => {
       expect(() => toRna(1)).toThrow(new Error('Input is not a string'));
     });

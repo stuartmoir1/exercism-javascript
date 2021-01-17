@@ -1,4 +1,4 @@
-const { colorCode, COLORS } = require('./exercism');
+const { colorCode, COLORS } = require('../exercism');
 
 describe('Resistor Color', () => {
   describe('Color codes', () => {
