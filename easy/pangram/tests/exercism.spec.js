@@ -1,4 +1,4 @@
-const { isPangram } = require('./exercism');
+const { isPangram } = require('../exercism');
 
 describe('Pangram()', () => {
   test('empty sentence', () => {

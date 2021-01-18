@@ -1,17 +1,11 @@
-const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
+const ALPHABET_LENGTH = 26;
 
-const isPangram = (sentence) => {
-  if (!sentence.length) return false;
-
-  const letters = {};
-  for (let letter of ALPHABET.split('')) {
-    const re = new RegExp(letter, 'gi');
-    letters[letter] = (sentence.match(re) || '').length;
-  }
-
-  return !Object.values(letters).includes(0);
-};
+const isPangram = (letters) => {
+  const re = /([a-z])(?=.*\1)|[^a-z]/gi;
+  return letters.replace(re, '').length === ALPHABET_LENGTH;
+}
 
 module.exports = {
   isPangram
 };
+
