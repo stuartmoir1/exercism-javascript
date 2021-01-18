@@ -1,41 +1,44 @@
 class BankAccount {
+  #balance
+  #isOpen
+
   constructor() {
-    this._balance;
-    this._isOpen = false;
+    this.#balance;
+    this.#isOpen = false;
   }
 
   open() {
-    if (this._isOpen) {
+    if (this.#isOpen) {
       throw new ValueError();
     }
-    this._balance = 0;
-    this._isOpen = true;
+    this.#balance = 0;
+    this.#isOpen = true;
   }
 
   close() {
-    if (!this._isOpen) {
+    if (!this.#isOpen) {
       throw new ValueError();
     }
-    this._isOpen = false;
+    this.#isOpen = false;
   }
 
   deposit(amount) {
-    if (!this._isOpen || amount < 0) {
+    if (!this.#isOpen || amount < 0) {
       throw new ValueError();
     }
-    this._balance += amount;
+    this.#balance += amount;
   }
 
   withdraw(amount) {
-    if (!this._isOpen || amount < 0 || this._balance - amount < 0) {
+    if (!this.#isOpen || amount < 0 || this.#balance - amount < 0) {
       throw new ValueError();
     }
-    this._balance -= amount;
+    this.#balance -= amount;
   }
 
   get balance() {
-    if (!this._isOpen) throw new ValueError();
-    return this._balance;
+    if (!this.#isOpen) throw new ValueError();
+    return this.#balance;
   }
 }
 
@@ -49,3 +52,4 @@ module.exports = {
   BankAccount,
   ValueError
 }
+

@@ -1,4 +1,4 @@
-const { BankAccount, ValueError } = require('./exercism');
+const { BankAccount, ValueError } = require('../exercism');
 
 describe('Bank Account', () => {
   test('newly opened account has zero balance', () => {
