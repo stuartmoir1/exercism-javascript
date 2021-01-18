@@ -1,4 +1,4 @@
-const { Matrix } = require('./exercism');
+const { Matrix } = require('../exercism');
 
 describe('Matrix', () => {
   test('extract row from one number matrix', () => {

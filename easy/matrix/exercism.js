@@ -1,20 +1,21 @@
 class Matrix {
+  #rows
+  #columns
+
   constructor(matrix) {
-    this._matrix = matrix;
-    this._rows = this._matrix
-      .split("\n")
-      .map((e) => e.split(" "))
-      .map((e) => e.map((f) => +f));
+    this.#rows = matrix
+      .split('\n')
+      .map((e) => e.split(' ').map(Number));
+    this.#columns = this.#rows[0]
+      .map((_, i) => this.#rows.map(e => e[i]));
   }
 
   get rows() {
-    return this._rows;
+    return this.#rows;
   }
 
   get columns() {
-    return Array(this._rows[0].length)
-      .fill(0)
-      .map((_, i) => this.rows.map(e => e[i]));
+    return this.#columns;
   }
 }
 
