@@ -1,43 +1,40 @@
 class BankAccount {
-  #balance
-  #isOpen
+  #balance;
 
   constructor() {
-    this.#balance;
-    this.#isOpen = false;
+    this.#balance = null;
   }
 
   open() {
-    if (this.#isOpen) {
+    if (this.#balance !== null) {
       throw new ValueError();
     }
     this.#balance = 0;
-    this.#isOpen = true;
   }
 
   close() {
-    if (!this.#isOpen) {
+    if (this.#balance === null) {
       throw new ValueError();
     }
-    this.#isOpen = false;
+    this.#balance = null;
   }
 
   deposit(amount) {
-    if (!this.#isOpen || amount < 0) {
+    if (this.#balance === null || amount < 0) {
       throw new ValueError();
     }
     this.#balance += amount;
   }
 
   withdraw(amount) {
-    if (!this.#isOpen || amount < 0 || this.#balance - amount < 0) {
+    if (this.#balance === null || amount < 0 || this.#balance - amount < 0) {
       throw new ValueError();
     }
     this.#balance -= amount;
   }
 
   get balance() {
-    if (!this.#isOpen) throw new ValueError();
+    if (this.#balance === null) throw new ValueError();
     return this.#balance;
   }
 }
